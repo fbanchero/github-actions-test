@@ -11,7 +11,9 @@ env:
 jobs:
   build:
     runs-on: [ self-hosted, linux ]
-
+    env: 
+      GITHUB_WORKSPACE: /home/fbanchero/Fernando/learn/github_actions/github-actions-test
+      
     steps:
       - run: echo $HOME
       - run: echo $GITHUB_WORKSPACE

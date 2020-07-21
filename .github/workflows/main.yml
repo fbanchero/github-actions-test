@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - run: pwd
-    - run: cd ../../../../github-actions-test
+    - run: cd ../../../../../github-actions-test
     - run: git pull
     - run: npm install
     

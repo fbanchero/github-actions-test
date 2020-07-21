@@ -17,4 +17,4 @@ jobs:
     needs: [build]
     runs-on: [ self-hosted, linux ]
     steps:
-    - run: pm2 reload app
+    - run: pm2 start app.js

@@ -4,17 +4,20 @@ on:
   push:
     branches: [ master ]
   
+env:
+  GITHUB_WORKSPACE: /home/fbanchero/Fernando/learn/github_actions/github-actions-test
+  
 jobs:
   build:
-
     runs-on: [ self-hosted, linux ]
 
     steps:
-    - uses: actions/checkout@v2
-    - run: npm install
+      - run: git pull
+      - run: npm install
     
   deploy:
     needs: [build]
     runs-on: [ self-hosted, linux ]
     steps:
-    - run: pm2 reload app
+      - run: pm2 delete app
+      - run: pm2 start app.js

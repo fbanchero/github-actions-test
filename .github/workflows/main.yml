@@ -10,6 +10,8 @@ jobs:
     runs-on: [ self-hosted, linux ]
 
     steps:
+    - run: pwd
+    - run: cd ../../github-actions-test
     - run: git pull
     - run: npm install
     
